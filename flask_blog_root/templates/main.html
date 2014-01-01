@@ -1,8 +1,58 @@
 {% extends "template.html" %}
 {% block content %}
-<div class="jumbo">
-  <h2>Flask Blog</h2>
-  <h3>Successful Login</h3>
-  <p><a href="/logout">Logout</a></p>
+<h3></h3>
+
+<div class="row" class="jumbo">
+ <div class="large-12 columns">
+  <div class="add">
+	<h3>Add a new post:</h3>
+	<form action="{{ url_for('add') }}" method="post"
+	class="add">
+	<label><strong>Title:</strong></label>
+	<input name="title" type="text">
+	<p><label><strong>Post:</strong></label><br/>
+	<textarea name="post" style="height: 14.3125rem;"></textarea></p>
+	<label><strong>Tags:</strong></label>
+	<input name="view" type="text">
+
+
+  <div class="row" style="text-align: center;">
+    <div class="large-12 columns"><br/><br/><br/><br/><br/><br/><br/></div>
+    <div class="large-12 columns"><input class="small round button" type="submit" value="Save"></div>
+  </div>
+
+	</form>
+  
+  <br/>
+  <h3>Posts:</h3>
+  
+  <table>
+  <thead>
+    <tr>
+      <th width="150">Title</th>
+      <th width="800">Post</th>
+      <th width="80">Views</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for p in posts %}
+    <tr>
+      <td>{{ p.title }}</td>
+      <td>{{ p.post }}</td>
+      <td>{{ p.view }} </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+  
+
+  </div>
  </div>
+</div>
+<div class="row">
+  <div class="large-1 columns"></div>
+  <div class="large-1 large-offset-10 columns">
+    <a class="small secondary button"  href="/logout">Logout</a>
+  </div>
+</div>
 {% endblock %}

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FlaskyBlog | Welcome</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
     <script src="js/modernizr.js"></script>
     <style>
 
@@ -13,7 +13,7 @@
 
   </head>
   <body>
-Template: Hello, helloww end template
+  <h2 style="text-align: center;">Flask Blog</h2>
     <div class="container">
       {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
@@ -24,6 +24,8 @@ Template: Hello, helloww end template
       {% block content %}
       {% endblock %}
     </div>
+ <div class="row" class="jumbo">
+ <div class="large-12 columns">
   <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
