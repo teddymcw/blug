@@ -81,5 +81,6 @@ def logout():
 def testfoun():
 	return render_template('foun5index.html')
 
-if __name__ == "__main__":
-	app.run(debug=False)
+#moved to run.py for heroku
+#if __name__ == "__main__":
+#	app.run(debug=False)
