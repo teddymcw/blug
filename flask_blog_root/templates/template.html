@@ -13,19 +13,24 @@
 
   </head>
   <body>
+<div class="row" class="jumbo">
+ <div class="large-12 columns">
   <h2 style="text-align: center;">Flask Blog</h2>
     <div class="container">
       {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
+        <div class="flash">{{ message }}</div> <br/><br/>
       {% endfor %}
       {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
+        <p class="error"><strong>Error:</strong> {{ error }} </p> <br/><br/>
       {% endif %}
+
       {% block content %}
       {% endblock %}
     </div>
- <div class="row" class="jumbo">
- <div class="large-12 columns">
+  </div>
+</div>
+
+ 
   <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>

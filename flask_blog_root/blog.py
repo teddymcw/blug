@@ -82,4 +82,4 @@ def testfoun():
 	return render_template('foun5index.html')
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=False)
