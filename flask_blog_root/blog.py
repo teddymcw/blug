@@ -27,6 +27,9 @@ def login_required(test):
 			flash('You need to login first.')
 			return redirect(url_for('login'))
 	return wrap 
+@app.route("/procedure")
+def proceed():
+	return render_template('Flask_procedure.html')
 
 ###Views
 @app.route("/", methods=['GET','POST'])

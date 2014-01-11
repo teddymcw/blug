@@ -1,0 +1,54 @@
+{% extends "template.html" %}
+{% block content %}
+<style> 
+ul {
+	list-style-type: none;
+}
+</style>
+
+
+<h5> Probable Prelims </h5>
+  <ul>
+	<li> Redefine and draw MVC </li>
+	<li> Correlate to basic directory structure </li>
+  </ul>
+
+<h3> Part 1: Prepping Code Structure </h3>
+<ol> 
+	<li> Look at environments and make sure build tools are setup 
+	  <ul> eg: pip-2.7, virtualenv, git remote pointer </ul>
+	</li>
+	<li> Pinpoint basic stack: including versions, DB Visualizers, dependencies and extensions. Install, pip freeze >, .gitignore </li>
+	<li> Setup Directory Structure, download Foundation </li>
+</ol>
+
+<h3> Part 2: Defining DB </h3> 
+<ol>
+    <li> start by defining fields and schema for registration and login models 
+      <ul> continue to define content DB? </ul>
+    </li>
+    <li> identify migration tool or script </li>
+    <li> create_db with SQLAlchemy and sqlite3 </li>
+      <ul> requires filling in parts of the config, possibly __init__ </ul>
+    <li> run first db test </li>
+
+</ol>
+
+<h3> Part 3: Flask Logic and Views </h3>
+<ol>  
+	<li> look over Flask conventions including decorator routing, Flask instance, module importing</li>
+	<li> create register and login views, also very basic index </li>
+	  <ul> ensure that we aren't limiting ourselves from building logins in the comment box itself. I think that referring back to the <a href="https://flask-wtf.readthedocs.org/en/latest/form.html">Flask-WTF Docs </a>will get us there </ul>
+	<li> create corresponding templates with basic foundation layout </li>
+	<li> test register and login data </li>
+	<li> add error handling and login_required decorators to view logic </li>
+<ol>
+
+<br/> <br/>
+
+
+
+
+Draw Logo; fukya
+
+{% endblock %}
