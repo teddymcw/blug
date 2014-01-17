@@ -3,19 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlaskyBlog | Welcome</title>
+    <title>Prototype</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
     <script src="js/modernizr.js"></script>
     <style>
+    #blue {
+      background-color: blue;
+    }
+    li {
+      color: white;
+    }
+    nav {
+      background-color: #1a2dff;
+    }
+    img{ text-align: center;}
 
+    #map {
+      width: 600px;
+      height: 600px;
+      top: 200%;
+      left: 40%;
+      margin: -150px 0px 0px -101px;
+    }
     </style>
-
 
   </head>
   <body>
 <div class="row" class="jumbo">
  <div class="large-12 columns">
-  <h2 style="text-align: center;">Flask Blog</h2>
+  <h2 style="text-align: center;"></h2>
     <div class="container">
       {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div> <br/><br/>

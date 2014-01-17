@@ -1,0 +1,125 @@
+{% extends "template.html" %}
+{% block content %}
+<br/><br/><br/><br/><br/>
+    <table width="875" align="center" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td align="center" colspan="5">
+                    <!-- <img width="695" height="100" alt="Anian Pettit Tunney Grubb Realtor" src="images/anian-bk.gif"></img> -->
+                    <h2>EXCELLENCE IN EVERYTHING</h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img width="135" height="402" alt="Piedmont Home" src="static/img/angel.jpg"></img>
+                </td>
+                <td>
+                    <img width="156" height="402" alt="Berkeley Home" src="static/img/path-long.jpg"></img>
+                </td>
+                <td>
+                    <img width="165" height="402" alt="Piedmont Home Search" src="static/img/home-long.jpg"></img>
+                </td>
+                <td>
+                    <img width="153" height="402" alt="Oakland Home" src="static/img/fountain-long.jpg"></img>
+                </td>
+                <td>
+                    <img width="135" height="402" alt="Oakland Home Search" src="static/img/tulip-long.jpg"></img>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row" style="text-align: center;">
+    <div class="large-12 columns"><br/><br/></div>
+    <div class="large-12 columns"><a class="medium round button" href="{{ url_for('specs') }}">Back to Specs</a></div>
+</div>
+
+    <!-- NAVBAR -->
+    <div id="map" class="reveal-modal" data-reveal class="large-4 columns">
+      <a class="close-reveal-modal" href="#"></a>
+    </div>
+
+    <div id="latitude"> 
+      
+
+    </div>
+    <div id="longitude"> 
+
+    </div>
+
+    <div id="cellinfo" class="reveal-modal" data-reveal style="text-align: center;"><h1>415-816-5434</h1>
+    <a class="close-reveal-modal" href="#">x</a></div>
+    <div id="telinfo" class="reveal-modal" data-reveal style="text-align: center;"><h1>415-321-3111</h1>
+    <a class="close-reveal-modal" href="#">x</a></div>
+    <div id="faxinfo" class="reveal-modal" data-reveal style="text-align: center;"><h1>fax 202-1631</h1>
+    <a class="close-reveal-modal" href="#">x</a></div>
+
+    <br><br>
+
+  <div class="fixed">  
+    <nav style="background-color: #d2918c;" class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+         <h1 style="color: black; text-align: center;" data-tooltip class="has-tip" title="click to locate route from current location" data-reveal-id="map">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         Maria Morgan 
+         </h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section"> 
+        <ul class="left">
+          <li><a href="#"></a></li>
+        </ul>
+        <ul class="right">
+          <li>
+            <a href="#" style="color: black; background-color: #d2b48c;" id="cellinfo" data-reveal-id="cellinfo" data-tooltip class="has-tip" title="view large">
+            CELL 415-816-5434
+            </a>
+          </li>
+          <li>
+            <a href="#" style="color: black; background-color: #cdd28c;" id="telinfo" data-reveal-id="telinfo" data-tooltip class="has-tip" title="view large">
+            TEL 415-321-3111
+            </a>
+          </li>
+          <li>
+           <a href="#" style="color: black; background-color: #8ccdd2;" id="faxinfo" data-reveal-id="faxinfo" data-tooltip class="has-tip" title="view large">
+           FAX 202-1631
+           </a>
+          </li>
+        </ul>
+        
+      </section>
+    </nav>
+  </div>
+  <!-- ENDNAVBAR -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script>
+      geo = navigator.geolocation;
+      geo.getCurrentPosition(success, failure);
+
+      function success(position) {
+        var mylat = position.coords.latitude;
+        var mylong = position.coords.longitude;
+        $('#lat').html(mylat);
+        $('#long').html(mylong);
+
+        var coords = new google.maps.LatLng(mylat, mylong);
+
+        var mapOptions = {
+          zoom: 16,
+          center: coords,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var marker = new google.maps.Marker({map: map, position: coords});
+
+      }
+
+      function failure() {
+        $('#lat').html("<p>It didn't work, co-ordinates not available</p>");
+      }
+    </script>
+{% endblock %}

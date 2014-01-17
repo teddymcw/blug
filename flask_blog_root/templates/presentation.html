@@ -1,0 +1,52 @@
+{% extends "template.html" %}
+{% block content %}
+<style> 
+ul {
+	list-style-type: none;
+}
+li {
+      color: black;
+    }
+p {font-family:cursive;font-size:18pt;} 
+</style>
+
+
+<h3> General Specs: </h3>
+<ol> 
+	<li> Look at environments and make sure build tools are setup 
+	  <ul> ie: visually pleasing, representative of you as an individual, representative of your work </ul>
+	</li>
+	<li> Major increases in functionality, especially for mobile clients and those who need important information quickly </li>
+	<li> Easily customizable in the future and added functionality such as updating listings possible </li>
+	<li> Aesthetically as beautiful or more than the rest of the modern web, minor updates done easily</li>
+	<li> Generates much more web traffic and the ability for your content to be indexed by search engines </li>
+	<li> Control over your web presence </li>
+</ol>
+
+<h3> Specific Specs: </h3> 
+<ol>
+    <li> Showcase your portfolio in hi-resolution photos as the feature aesthetic at the top of the page</li>
+    <li> Key information about yourself and current listings </li>
+    <li> Integration with Google Maps API and other APIs identified as valuable </li>
+    <li> Client testimonials neatly organized </li>
+    <li> Interactive menus and links to any desirable information, links or general content </li>
+    <li> Not compromise load time for clients on the go </li>
+</ol>
+
+<div class="row">
+    <div class="large-12 columns"></div>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teddy McWilliams </p>
+</div>
+
+
+<div class="row" style="text-align: center;">
+    <div class="large-12 columns"><br/><br/></div>
+    <div class="large-12 columns"><a class="medium round button" href="{{ url_for('realestate') }}">Checkit!</a></div>
+</div>
+
+
+<br/> <br/>
+
+
+
+{% endblock %}
