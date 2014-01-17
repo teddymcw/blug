@@ -1,5 +1,28 @@
 {% extends "template.html" %}
 {% block content %}
+<style>
+.fancy-header {
+  font-family: "Lucida Grande", Tahoma;
+  font-size: 11px;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: uppercase;
+  color: #666666;
+        margin-top: 10px;
+  text-align: center!important;
+  letter-spacing: 0.3em;
+}
+.fancy {
+  font-family: "Lucida Grande", Tahoma;
+  font-size: 10px;
+  font-weight: lighter;
+  font-variant: normal;
+  color: #666666;
+        margin-top: 10px;
+  text-align: center!important;
+  letter-spacing: 0.3em;
+}
+</style>
 <br/><br/><br/><br/><br/>
     <table width="875" align="center" cellspacing="0" cellpadding="0" border="0">
         <tbody>
@@ -31,9 +54,33 @@
     </table>
 
     <div class="row" style="text-align: center;">
-    <div class="large-12 columns"><br/><br/></div>
-    <div class="large-12 columns"><a class="medium round button" href="{{ url_for('specs') }}">Back to Specs</a></div>
-</div>
+      <div class="large-12 columns"><br/><br/></div>
+      <div class="large-12 columns"><a class="medium round button" href="{{ url_for('specs') }}">Back to Specs</a></div>
+    </div>
+
+    <br/><br/><br/><br/>
+
+    <!-- WRITTEN CONTENT -->
+    <div class="row" style="text-align: center;">
+      <div class="large-12 columns"></div>
+      <div class="large-12 columns">
+        <h3 class="fancy-header">Maria Morgan joins Hill &amp; Co. with over 17 years of experience selling San Francisco real estate.</h3>
+        <br/>
+          <p class="fancy">
+          In her professional opinion, San Francisco real estate represents one of the best investments a person can make. As such, Maria approaches every purchase – from a one bedroom condominium to a multi-unit apartment building – as a major investment meriting careful analysis on behalf of her clients. She advises clients to look beyond a property’s more superficial attributes and to focus on fundamentals – condition and location. A firm believer in that age-old adage, "Location, Location, Location," she urges homebuyers to purchase the best location they can afford
+          </p>
+          <p class="fancy">
+          When representing sellers, Maria takes full advantage of the state-of-the-art tools offered by Hill &amp; Co. – custom websites and videos, professionally designed marketing materials and membership in the Who's Who in Luxury Real Estate organization. Her diversity of experience and negotiating expertise allow her to anticipate and mitigate any potential issues prior to a problem arising. Consequently, she closes her deals at a far higher rate than the industry norm.
+          </p>
+          <p class="fancy">
+          Due to her association with various community advocacy groups and her involvement with the Governmental Relations Committee of the San Francisco Association of Realtors, Maria regularly frequents City Hall. Her insider knowledge of the City’s political process keeps her atop the ever-changing laws governing real estate in the City.
+          </p>
+          <p class="fancy">
+          Originally from the Big “O” (Omaha, Nebraska), Maria counts her Midwestern values among her best assets.
+          </p>
+
+     </div>
+    </div>
 
     <!-- NAVBAR -->
     <div id="map" class="reveal-modal" data-reveal class="large-4 columns">
