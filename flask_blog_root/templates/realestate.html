@@ -12,6 +12,11 @@
   text-align: center!important;
   letter-spacing: 0.3em;
 }
+.fancy-text {
+  font-family: "Lucida Grande", Tahoma;
+  font-weight: bold;
+  font-variant: normal;
+}
 .fancy {
   font-family: "Lucida Grande", Tahoma;
   font-size: 10px;
@@ -86,7 +91,8 @@
      </div>
     </div>
 
-    <!-- NAVBAR -->
+  
+    <!-- REVEAL MODALS -->
 <!-- THIS HAS BEEN CHANGED!!! -->
     <div id="map" class="reveal-modal" data-reveal class="large-4 columns">
       <a class="close-reveal-modal" href="#">x</a>
@@ -119,15 +125,16 @@
     <a class="close-reveal-modal" href="#">x</a></div>
     <div id="faxinfo" class="reveal-modal" data-reveal style="text-align: center;"><h1>fax 202-1631</h1>
     <a class="close-reveal-modal" href="#">x</a></div>
-
+    <!-- END REVEAL MODALS -->
     <br><br>
 
+  <!-- NAVBAR -->
   <div class="fixed">  
     <nav style="background-color: #d2918c;" class="top-bar">
       <ul class="title-area">
         <li class="name">
         <!-- THIS HAS BEEN CHANGED!!! FROM MAP TO CONTACTS -->
-         <h1 style="color: black; text-align: center;" data-tooltip class="has-tip" title="click for all contact info" data-reveal-id="allcontacts">
+         <h1 style="color: white; text-align: center; font-family: cursive; font-size:21pt;" data-tooltip class="has-tip" title="click for all contact info" data-reveal-id="allcontacts">
          <!-- THIS HAS BEEN CHANGED!!! FROM MAP TO CONTACTS -->
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          Maria Morgan 
@@ -135,23 +142,25 @@
         </li>
       </ul>
 
+      <!-- RIGHT SIDE CONTACTS -->
       <section class="top-bar-section"> 
         <ul class="left">
           <li><a href="#"></a></li>
         </ul>
         <ul class="right">
           <li>
-            <a href="#" style="color: black; background-color: #d2b48c;" id="cellinfo" data-reveal-id="cellinfo" data-tooltip class="has-tip" title="view large">
+            <a href="#" style="color: black; background-color: #d2b48c;" id="cellinfo" data-reveal-id="cellinfo" data-tooltip class="has-tip" title="view large" class="fancy-text">
             CELL 415-816-5434
             </a>
           </li>
           <li>
-            <a href="#" style="color: black; background-color: #cdd28c;" id="telinfo" data-reveal-id="telinfo" data-tooltip class="has-tip" title="view large">
+            <a href="#" style="color: black; background-color: #cdd28c;" id="telinfo" data-reveal-id="telinfo" data-tooltip class="has-tip" title="view large" class="fancy-text">
             TEL 415-321-3111
             </a>
           </li>
           <li>
-           <a href="#" style="color: black; background-color: #8ccdd2;" id="faxinfo" data-reveal-id="faxinfo" data-tooltip class="has-tip" title="view large">
+           <a href="#" style="color: black; background-color: #8ccdd2; font-family: "Lucida Grande", Tahoma;
+  font-weight: bold;" id="faxinfo" data-reveal-id="faxinfo" data-tooltip class="has-tip" title="view large">
            FAX 202-1631
            </a>
           </li>
