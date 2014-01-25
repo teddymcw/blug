@@ -28,6 +28,10 @@ def login_required(test):
 			return redirect(url_for('login'))
 	return wrap 
 	
+@app.route("/youtube")
+def youtube():
+	return render_template('youtube.html')
+
 @app.route("/procedure")
 def proceed():
 	return render_template('Flask_procedure.html')
@@ -39,6 +43,10 @@ def realestate():
 @app.route("/specs")
 def specs():
 	return render_template('presentation.html')
+
+@app.route("/video")
+def video():
+	return render_template('video.html')
 
 ###Views
 @app.route("/", methods=['GET','POST'])

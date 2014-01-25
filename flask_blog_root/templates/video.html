@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video Background Test</title>
+	<script src="static/js/jquery.js" type="text/javascript"></script>
+	<script src="static/js/video.js" type="text/javascript"></script>
+	<script>
+	jQuery(document).ready(function() {
+		$('video#featurevid').on("loadedmetadata", scaleVideo);
+		$(window).on("resize", scaleVideo);
+
+		function scaleVideo() {
+			var windowHeight = $(window).height();
+			var windowWidth = $(window).width();
+
+			//fuck this didn't work
+			alert('win height: ' windowHeight + ' win width: ' + windowWidth);
+
+			var videoNativeHeight = $('video#featurevid')[0].videoHeight;
+			var videoNativeWidth = $('video#featurevid')[0].videoWidth;
+
+			var heightScaleFactor = windowHeight / videoNativeHeight;
+			var widthScaleFactor = windowWidth / videoNativeWidth;
+
+			//got the highest scale factor 
+
+			if (widthScaleFactor > heightScaleFactor) {
+				var scale = widthScaleFactor;
+			}
+
+			else {
+				var scale = heightScaleFactor;
+			}
+
+			var scaledVideoHeight = videoNativeHeight * scale;
+			var scaledVideoWidth = videoNativeWidth * scale;
+
+			alert(scaledVideoHeight + ' < Scaled Height and Width > ' scaledVideoWidth);
+
+			$('video#featurevid').height(scaledVideoHeight);
+			$('video#featurevid').width(scaledVideoWidth);
+		}
+	})
+	</script>
+
+	<style>
+	body {
+		magin: 0;
+	}
+	video#featurevid {
+		position: fixed;
+	}
+	</style>
+
+</head>
+<body>
+
+	<video id="featurevid" muted src="static/img/Indonesia-short-movie.mp4" autoplay="true" controls="true"></video>
+
+	<!-- COOL OPAQUE DIV STYLE, SPECIFIED IN THE RGBA -->
+	<div style="background-color: rgba(255, 255, 255, 0.3); height: 400px; width 400px; margin: 0 auto; position: relative; display: block;">Test Text</div>
+
+</body>
+</html>
