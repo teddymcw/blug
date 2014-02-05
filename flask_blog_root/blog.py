@@ -28,9 +28,9 @@ def login_required(test):
 			return redirect(url_for('login'))
 	return wrap 
 
-@app.route("groceries")
+@app.route("/groceries")
 def groceries():
-	return render_template("human_grocery_store.md")
+	return render_template("human_grocery_store.html")
 	
 @app.route("/youtube")
 def youtube():
