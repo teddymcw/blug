@@ -27,6 +27,10 @@ def login_required(test):
 			flash('You need to login first.')
 			return redirect(url_for('login'))
 	return wrap 
+
+@app.route("groceries")
+def groceries():
+	return render_template("human_grocery_store.md")
 	
 @app.route("/youtube")
 def youtube():
