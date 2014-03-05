@@ -291,6 +291,53 @@ xmp, code, pre, samp {
 </div>
 </div>
 
+<div class="slide">
+<h1>Scales: More Math More Fun</h1>
+<li>Looking at scratching the surface... </li>
+
+<xmp>
+  var svgPadding = (svgHeight + svgWidth) / 200;
+        var min_circleData = d3.min(circleData);
+        var max_circleData = d3.max(circleData);
+
+    var xScale = d3.scale.linear()
+                  .domain([ 0, max_circleData])
+                  .range([svgPadding - min_circleData, svgHeight - svgPadding - max_circleData]);
+
+    var yScale = d3.scale.linear()
+                  .domain([ 0, max_circleData])
+                  .range([svgPadding - min_circleData, svgHeight - svgPadding - max_circleData]);
+
+    var circleAttrs = circles
+        .attr({ cx : function(d) { return xScale(d); }, 
+          cy : function(d) { return yScale(d); }, 
+          r  : function(d) { return d; }, 
+          fill : d3.scale.category10(), stroke : d3.scale.category10()});
+ 
+</xmp>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Clarity on Scales</h1>
+<li>A scale’s input domain is the set of possible input data values. </li>
+<li>This is usually very dynamic set of values, especially upon page refreshes and/or data reloading</li>
+<li>In practice this usually means finding d3.min(dataset), d3.max(dataset) for range([ , ])</li>
+<li> Think of the domain as your expertise domain </li>
+<br/>
+<li>A scale’s output range is the set of possible output values</li>
+<li>This is usually a more static sets of values based on the size of your data display palette</li>
+<li>In practice this usually means inserting ([0 + padding, div_w - padding]), </li>
+<li> Think of the range function as the range of your display element and/ or display screen </li>
+<li> [Input domain 100 (300) 500]     x = 300
+     [10 (180) 350 Output range]   f(x) = 180
+
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
 
 <div class="slide">
 <h1>Break Down</h1>
