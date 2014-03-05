@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>What the fuck is D3?</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Eric A. Meyer" />
+<meta name="company" content="Complex Spiral Consulting" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="static/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="static/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="static/ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="static/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="static/ui/default/slides.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Marcellus+SC|Nobile|Gruppo' rel='stylesheet' type='text/css'>
+
+<style> 
+li {
+color: #333333;
+font-family: 'Gruppo', cursive;
+}
+
+p {
+color: #333333;
+font-family: 'Gruppo', cursive;
+}
+
+h1, h2 {
+font-family: 'Marcellus SC', serif;
+}
+
+aside {
+	float: right;
+	border-style: solid;
+	border-color: aqua;
+}
+
+
+xmp, code, pre, samp {
+	font-size: 20px;
+}
+.small-nice {
+	font-size: 18px; 
+}
+
+.slightly-smaller {
+	font-size: 22px; 
+}
+
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>[location/date of presentation]</h1>
+<h2>What the fuck is D3?</h2>
+</div>
+
+</div>
+
+<!-- NOTE THAT YOU GOTTA CENTER THE SLIDES FOR VISIBILITY, ESPECIALLY WITH BACKGROUND -->
+
+<div class="presentation">
+
+<div class="slide">
+<br/><br/>
+<center> <h1>What the fuck is D3.JS?</h1> 
+<h2>Really though...</h2></center>
+<br/><br/><br/><br/>
+<h4 style="font-style: italic;">by Teddy McWilliams</h4>
+</div>
+
+
+<div class="slide">
+<h1>What is D3?</h1>
+<br/><br/><br/><br/>
+<li>In short Data Driven Documents.</li>
+<li>One of the latest and most popular technologies to be created in a long line of data visualization software.</li>
+<li>Written in and write in pure JS</li>
+
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Why D3?</h1>
+<br/><br/><br/><br/>
+<li>D3.JS stands out because its an incredibly flexible library built upon web standards, the greatest communcation platform we have thus far. </li>
+<li>This makes our mission of converting data into easily consummable information and thus hopefully knowledge.</li>
+<li> Unlimited potential:
+<span class="slightly-smaller"> The ways that the library is being used is still growing in all sorts of ways. Big community, used by "top" orgs, etc... All the makings of a truly lasting open source project.</span></li>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>How D3?</h1>
+<br/><br/><br/><br/>
+<li>With the implementation of CSS3 selectors and then HTML5 standards including the SVG element it was made possible to write a Js library that could drive shapes and drawings on our html documents with all sorts of data.</li>
+
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>FAQ D3?</h1>
+<br/><br/><br/><br/>
+<li>Q: Can you use D3 outside of the SVG element?</li>
+<li>A: Yes, of course, duh. But why would you want to?</li>
+<li> There might be some incredibly creative use cases but I'll get back to you on that </li>
+<li> Most functionality is written around manipulating elements and their relationships within the SVG element</li>
+</ul>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Start your HTML</h1>
+<center><b>JSBin style</b></center>
+  <xmp>					
+    <!DOCTYPE html>
+    <head>
+      <meta charset="utf-8">
+      <title>D3 Presentation Palette</title>
+      <style> 
+      svg {
+      	border-style: solid;
+      	border-color: blue;
+      }
+      </style>
+    </head>
+    <body>
+
+      <svg style="height: 400px; width: 400px;">
+		
+      </svg>
+
+    </body>
+    </html>
+  </xmp>
+
+
+<div class="slide">
+<h1>Quick intro to SVG</h1>
+<li>Scalable Vector Graphics. <aside><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle">MDN</a></aside></li> 
+<li class="slightly-smaller">Scalable: No need to think much in pixels, rather think in coordinates. </li>
+<li class="slightly-smaller">Vector: A one-dimensional array </li>
+<li class="slightly-smaller">Graphics: images defined by geometric primitives as opposed to bitmaps</li>
+
+<li>Circle Example: </li>  
+<xmp>
+  <circle cx="200" cy="200" r="50" fill="red" stroke="blue" stroke-width="10"/>
+</xmp>
+<pre><code> </code></pre>
+
+<li class="slightly-smaller">The two important style rules are fill and stroke. Both rules accept either a hex color or a regular CSS color</li>
+<li class="slightly-smaller"> <b>other shapes we get for free:</b>  </li>
+<li class="slightly-smaller">  rect, ellipse, line, polyline, polygon, path</li>
+</ul>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Now D3</h1>
+
+<li>First step: CDN and SVG</li>
+ 
+<xmp>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
+	function doD3() {
+		var svgWidth = 455;
+		var svgHeight = 455;
+      
+		var svgContainer = d3.select("body").append("svg")
+			.attr({ width: svgWidth, height: svgHeight });
+
+        }
+
+    window.onload = doD3;
+
+</script> 
+</xmp>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Realer D3</h1>
+
+<li>Second step: Creating Elements from N array elements</li>
+ 
+<xmp>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
+	function doD3() {
+		var svgWidth = 455, svgHeight = 455, svgContainer = d3.select("body")
+		.append("svg").attr({ width: svgWidth, height: svgHeight });
+
+		//simplest possible mockdata
+		var circleData = [10,20,30,40,50,60,70]; 
+
+		var circles = svgContainer.selectAll("circle") 	// 1
+                           .data(circleData) 			// 2
+                           .enter() 				// 3
+                           .append("circle"); 			// 4
+        }
+
+    window.onload = doD3;
+
+</script> 
+</xmp>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>...</h1>
+<li>A side step: Attributes</li>
+<xmp>
+	function doD3() {
+		var svgWidth = 455, svgHeight = 455, svgContainer = d3.select("body")
+		.append("svg").attr({ width: svgWidth, height: svgHeight });
+
+		var circleData = [10,20,30,40,50,60,70];
+		var circles = svgContainer.selectAll("circle") 	
+                           .data(circleData) 		
+                           .enter() 				
+                           .append("circle"); 			
+		var circleAttr = circles
+				.attr({ cx : 150, cy : 250, r : 50, 
+				fill : "blue", stroke : "aqua"});
+				
+        }
+    window.onload = doD3;
+ 
+</xmp>
+<li><b>What's Hannin?: Copy and Paste in the Console</b></li>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Final Core Step</h1>
+<li> Data Driven Dynamically </li>
+
+<xmp>
+	function doD3() {
+		var svgWidth = 455, svgHeight = 455, svgContainer = d3.select("body")
+		.append("svg").attr({ width: svgWidth, height: svgHeight });
+		
+		var circleData = [10,20,30,40,50,60,70];
+		var circles = svgContainer.selectAll("circle") 	
+                           .data(circleData) 			
+                           .enter() 				
+                           .append("circle");
+
+		var circleAttrs = circles
+				.attr({ cx : function(d) { return d; }, 
+					cy : function(d) { return d; }, 
+					r  : function(d) { return d; }, 
+					fill : "blue", stroke : "aqua"});
+        }
+    window.onload = doD3;
+ 
+</xmp>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Break Down</h1>
+<xmp>
+ 			
+		var svgContainer = d3.select("body").append("svg"); 	// 0
+		var circles = svgContainer.selectAll("circle") 		// 1
+                           .data(circleData) 				// 2
+                           .enter() 					// 3
+                           .append("circle"); 				// 4
+
+ 
+</xmp>
+<h5> Reference to lines in source of D3.JS</h5>
+<li class="slightly-smaller">0. 983 nothing too special, just like jQuery</li>
+<li class="slightly-smaller">1. 507 <!-- <xmp class="small-nice">d3_selectionPrototype.select = function(selector)</xmp> -->
+within the svg element select all of the circle elements</li>
+<li class="slightly-smaller">3. 813  
+for anything I have selected that does not exist actually create one (notice this is still in memory and not connected to the DOM yet)</li>
+<li class="slightly-smaller">4. 723 now append that to our SVG</li>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+<!--
+<div class="slide">
+<h1>Break Down</h1>
+<xmp>
+ 			
+		var svgContainer = d3.select("body").append("svg"); 	// 0
+		var circles = svgContainer.selectAll("circle") 		// 1
+                           .data(circleData) 				// 2
+                           .enter() 					// 3
+                           .append("circle"); 				// 4
+
+ 
+</xmp>
+<li class="slightly-smaller">2. 749 .data <xmp>d3_selectionPrototype.data = function(value, key)</xmp> 760 bind method
+  and 831 creates dataNode <xmp>function d3_selection_dataNode(data) {
+    return {
+      __data__: data
+    };</xmp>
+I’m going to use the word “attach" the value of each element in our data to the “circle” elements we have already selected.</li>
+<li class="slightly-smaller">3. 813 .enter 
+for anything I have selected that doesn’t exist actually create one (notice this is still ‘in memory’ and not connected to the DOM yet)</li>
+<li class="slightly-smaller">4. 723 now append that to our SVG</li>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div> -->
+
+<div class="slide">
+<h1>Plugginable Datatypes</h1>
+<li>an XMLHttpRequest</li>
+<li>a text file</li>
+<li>a JSON Blob, including geoJSON </li>
+<li>an HTML document fragment</li>
+<li>an XML document fragment</li>
+<li>a CSV file</li>
+<li>a TSV file</li>
+</ul>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Mostly Generic Learning Links</h1>
+<li><a href="https://github.com/mbostock/d3/wiki/API-Reference">https://github.com/mbostock/d3/wiki/API-Reference</a></li>
+<li><a href="https://github.com/mbostock/d3/wiki/Tutorials">https://github.com/mbostock/d3/wiki/Tutorials</a></li>
+<li><a href="http://d3js.org/">Examples and Bl.ocks: http://d3js.org/</a></li>
+<li><a href="http://enjalot.github.io/dot-enter/">Favorite D3 nerd: http://enjalot.github.io/dot-enter/</a></li>
+<li><a href="https://www.dashingd3js.com/">Thorough beginners tut: https://www.dashingd3js.com/</a></li>
+<li><a href="http://it-ebooks.info/book/1265/">O'Reilly book by USF dude to be fully released soon</a></li>
+<li><a href="http://flippinawesome.org/2014/02/03/learning-svg/?utm_source=html5weekly&utm_medium=email">Learning all about SVG by creating a logo</a></li>
+<li><a href="http://blog.pixelingene.com/2011/07/building-a-tree-diagram-in-d3-js/">Random but useful Tree Diagram</a></li>
+<li><a href="http://darkhorseanalytics.com/blog/data-looks-better-naked/">Data looks better naked</a></li>
+</ul>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Why D3 sucks</h1>
+<li>Other tools will certainly supercede it, like everything, just a matter of time.</li>
+<li>All "organized" information has fallacies, even raw data and experiments often have terrible fallacies.
+   Don't dress a pig in J. Lo's grammy dress</li>
+<li> Have to do lots of extra and tedious things to be able to manipulate your data viz for mobile </li>
+<li> D3 prides itself on being built upon web standards but we all should know what that means.</li>
+<li> In this case the compatability range is IE9+ </li>
+</ul>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1 style="font-size: 18px;">Lots of Data Viz Tools: Python to the web, maybe with some JS</h5>
+<li class="small-nice">
+Montalenti says:
+   * d3 bespoke viz: hardest, most flexible
+   * nvd3 chart models: slightly easier, still very flexible
+   * vincent/vega: easiest, relatively inflexible
+</li>
+<li class="small-nice"> Vega describe data visualizations in a JSON format, and generate interactive views using either HTML5 Canvas or SVG </li>
+<li class="small-nice"> Vincent is a single author building on top of Vega, Vincent is a Python library that “humanizes” vega </li>
+<li class="small-nice"> MatPlotLib is very well established in the python community, or at least scipy / pydata </li>
+<li class="small-nice"> mpld3: A D3 Viewer for Matplotlib - more of a jacky solution, not a ground up project like Bokeh and Plotly</li>
+<li class="small-nice"> 
+Bokeh is one of several open-source components of the broader technical vision of Continuum Analytics. Traditional 3-clause BSD License and developed in part by funding from DARPA‘s XDATA program
+</li>
+<li class="small-nice"> considered orthogonal to D3.js </li>
+<li class="small-nice">Bokeh is merely producing JSON objects for BokehJS</li>
+<li class="small-nice">Plot.ly plotting library is also awesome and "good github page that "puts more of the functionality of R in the hands of a python coder" to use on the web.</li>
+<li class="small-nice">Tangible is a Python library to convert data into tangible 3D models. It generates code for different backends like OpenSCAD or ImplicitSCAD. It is inspired by projects like OpenSCAD and d3.js.</li>
+<li class="small-nice"> <a href="http://www.xavierdupre.fr/blog/2013-11-30_nojs.html">iPython and Pandas to d3py </a></li>
+<li class="slightly-smaller"> On and on... but these are a good reference point </li>
+</ul>
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+<h1>Even more fuckin Tools: Just Js</h1>
+<li class="slightly-smaller">Flotr2 = Flot inspired flotr and flotr2 is a fork of flotr</li>
+<li class="slightly-smaller"> 
+Processing.js = A native JavaScript implementation of Processing, the fantastic pro‐ gramming language for artists and designers new to programming. (original Processing library is in java, converted to javascript)
+</li>
+<li class="slightly-smaller">
+Paper.js = A framework for rendering vector graphics to canvas. Also, its website is one of the most beautiful on the Internet, and their demos are unbelievable. (Go play with them now.)
+</li>
+<li class="slightly-smaller">
+Raphaël = Another library for drawing vector graphics to canvas. Popular due to its friendly syntax and support for older browsers.
+</li>
+<li class="slightly-smaller">
+Three.js = A library for generating any sort of 3D scene you could imagine, produced by Google’s Data Arts team. You could spend all day exploring the mind-blowing demos on their site.
+</li>
+<li class="slightly-smaller"> Highcharts.js = also made with SVG element </li>
+<li class="slightly-smaller"> Javascript InfoVis Toolkit = canvas (no ability inspect canvas) </li>
+
+<div class="handout">
+[any material that should appear in print but not on the slide]
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

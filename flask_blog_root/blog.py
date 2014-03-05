@@ -28,6 +28,10 @@ def login_required(test):
 			return redirect(url_for('login'))
 	return wrap 
 
+@app.route("/d3")
+def deethree():
+	return render_template("s5-D3.html")
+
 @app.route("/groceries")
 def groceries():
 	return render_template("human_grocery_store.html")
